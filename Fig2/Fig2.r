@@ -5,11 +5,7 @@ library("factoextra")
 library("vegan")
 library(grid) 
 
-trans_df <- fread("trans_df.fpkm.bm.txt", data.table = F) %>%
-  filter(sample != "AAH") %>%
-  dcast(sample~Gene, value.var = "bm.value")%>%
-  tibble::column_to_rownames("sample")
-
+load( "trans_df.fpkm.bm.RData")
 
 
 
